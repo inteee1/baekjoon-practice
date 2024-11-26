@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+char m_Arr1[5][15];
+
+void main()
+{
+	for(int nRowCnt = 0; nRowCnt < 5; nRowCnt++)
+	{
+		scanf("%s", m_Arr1[nRowCnt]); 
+	}
+	
+	for(int nColCnt = 0; nColCnt < 15; nColCnt++)
+	{
+		for(int nRowCnt = 0; nRowCnt < 5; nRowCnt++)
+		{
+			if(m_Arr1[nRowCnt][nColCnt] != NULL)
+			{
+				printf("%c", m_Arr1[nRowCnt][nColCnt]);
+			}
+		}
+
+	}
+	
+}
