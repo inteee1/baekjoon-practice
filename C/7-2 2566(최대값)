@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int m_ArrPaper[100][100];
+
+
+
+int main()
+{
+	int PaperCnt, x, y, area;
+	
+	scanf("%d", &PaperCnt);
+	
+	for(int nPaper = 0; nPaper < PaperCnt; nPaper++)
+	{
+		scanf("%d %d", &x, &y);
+		for(int nRowCnt = y; nRowCnt < y + 10; nRowCnt++)
+		{
+			for(int nColCnt = x; nColCnt < x + 10; nColCnt++)
+			{
+				m_ArrPaper[nRowCnt][nColCnt] = 1;
+			}
+		}
+
+	}
+	
+	for(int nRowCnt = 0; nRowCnt < 100; nRowCnt++)
+	{
+		for(int nColCnt = 0; nColCnt < 100; nColCnt++)
+		{
+			if(m_ArrPaper[nRowCnt][nColCnt] == 1)
+			{
+				area++;
+			}
+		}
+	}
+	
+	
+	printf("%d\n", area);
+	
+	return 0;
+}
