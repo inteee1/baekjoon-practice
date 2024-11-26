@@ -1,41 +1,31 @@
 #include <stdio.h>
+#include <limits.h>
 
-int m_ArrPaper[100][100];
+
+// 
+int m_nArrMartix[9][9];
+int m_nRow;
+int m_nCol;
+int m_nMax = INT_MIN;
 
 
 
 int main()
 {
-	int PaperCnt, x, y, area;
-	
-	scanf("%d", &PaperCnt);
-	
-	for(int nPaper = 0; nPaper < PaperCnt; nPaper++)
-	{
-		scanf("%d %d", &x, &y);
-		for(int nRowCnt = y; nRowCnt < y + 10; nRowCnt++)
-		{
-			for(int nColCnt = x; nColCnt < x + 10; nColCnt++)
-			{
-				m_ArrPaper[nRowCnt][nColCnt] = 1;
-			}
-		}
-
+    for(int nRowCnt = 0; nRowCnt < 9; nRowCnt++)
+    {
+    	for(int nColCnt = 0; nColCnt < 9; nColCnt++)
+    	{
+    		scanf("%d", &m_nArrMartix[nRowCnt][nColCnt]);
+    		
+    		if( m_nMax < m_nArrMartix[nRowCnt][nColCnt])
+    		{
+    			m_nMax = m_nArrMartix[nRowCnt][nColCnt];
+    			m_nRow = nRowCnt;
+    			m_nCol = nColCnt; 		
+    		}
 	}
-	
-	for(int nRowCnt = 0; nRowCnt < 100; nRowCnt++)
-	{
-		for(int nColCnt = 0; nColCnt < 100; nColCnt++)
-		{
-			if(m_ArrPaper[nRowCnt][nColCnt] == 1)
-			{
-				area++;
-			}
-		}
-	}
-	
-	
-	printf("%d\n", area);
-	
-	return 0;
+    }
+    
+    printf("Max_num = %d, Row = %d, Col = %d\n", m_nMax, m_nRow + 1, m_nCol + 1);
 }
